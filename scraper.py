@@ -20,6 +20,8 @@ while not URL.startswith("https://archive.org/details/"):
     print("URL format error! Please try again: ")
     URL = input("Please enter archive.org URL page: ")
 
+print("Please wait...")
+
 page = requests.get(URL)
 if page.status_code == 200:
     link_txt = ""
