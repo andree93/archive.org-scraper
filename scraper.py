@@ -14,14 +14,14 @@ if page.status_code == 200:
     link_txt = ""
     soup_obj = BeautifulSoup(page.content, "html.parser")
     links = soup_obj.find_all(itemprop="associatedMedia")
-    print("Trovati "+str(len(links))+" link")
+    print("Found "+str(len(links))+" link")
     for link in links:
         link_txt += link['href']+"\n"
     file_name = input("Please enter file name (where all links will be saved): ")
     percorso = os.path.join(os.getcwd(), file_name + ".txt")
     with open(percorso, "w", encoding='utf-8') as file:
         file.write(link_txt)
-        print("File salvato in: "+percorso)
+        print("File saved as: "+percorso)
 else:
     print("Request error! HTTP Error code: "+ str(page.status_code))
     print("Exiting...")
