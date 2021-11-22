@@ -16,7 +16,7 @@ else:
     URL = args.url
 
 
-if not URL.startswith("https://archive.org/details/"):
+while not URL.startswith("https://archive.org/details/"):
     print("URL format error! Please try again: ")
     URL = input("Please enter archive.org URL page: ")
 
